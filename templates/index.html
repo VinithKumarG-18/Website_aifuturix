@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIFuturix InnovLabz</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="/static/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16极6" href="/static/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/static/favicon/android-chrome-512x512.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180极 href="apple-touch-icon.png">
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Microsoft Tile -->
+    <meta name="msapplication-TileColor" content="#075E54">
+    <meta name="msapplication-TileImage" content="mstile-150x150.png">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#075E54">
+</head>
+<body>
+    <!-- Logo and Navigation -->
+    <div class="logo-nav-container">
+        <div class="logo">
+            <img src="/static/logo.png" alt="AIFuturix Logo" style="height: 60px;">
+        </div>
+        
+        <div class="nav-menu">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home" class="top-section">
+        <div class="hero-content">
+            <div class="nav-text">
+                Home | Buildings |<br>
+                <span class="bold">GenAI Process<br>
+                Automations</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="company-name">AIFUTURIX INNOVLABZ PRIVATE LIMITED</div>
+        <div class="contact-details">
+            69. ARG Complex, Sathy Road, Erode 638003, TN <br>
+            +91 868-0000-202 &nbsp;&nbsp; connect@aifuturix.in
+        </div>
+        <div class="locations">
+            We are @ Coimbatore &nbsp; -  Erode &nbsp; -  Tirupur &nbsp; -  Karur &nbsp; -  Hosur &nbsp; -  Bangalore
+        </div>
+        <div class="tagline">Let's build the automation with us!</div>
+    </section>
+
+    <!-- WhatsApp Chatbot Integration - UPDATED TO MATCH YOUR CODE -->
+    <div class="fab-container">
+        <button class="fab" id="toggle-chat-button">
+            <svg class="fab-icon" viewBox="0 0 90 90" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M90,43.841c0,24.213-19.779,43.841-44.182,43.841c-7.747,0-15.025-1.98-21.357-5.455L0,90l7.975-23.522   c-4.023-6.606-6.34-14.354-6.34-22.637C1.635,19.628,21.416,0,45.818,0C70.223,0,90,19.628,90,43.841z M45.818,6.982   c-20.484,0-37.146,16.535-37.146,36.859c0,8.065,2.629,15.534,7.076,21.61L11.107,79.14l14.275-4.537   c5.865,3.851,12.891,6.097,20.437,6.097c20.481,0,37.146-16.533,37.146-36.857S66.301,6.982,45.818,6.982z M68.129,53.938   c-0.273-0.447-0.994-0.717-2.076-1.254c-1.084-0.537-6.41-3.138-7.4-3.495c-0.993-0.358-1.717-0.538-2.438,0.537   c-0.721,1.076-2.797,3.495-3.43,4.212c-0.632,0.719-1.263,0.809-2.347,0.271c-1.082-0.537-4.571-1.673-8.708-5.333   c-3.219-2.848-5.393-6.364-6.025-7.441c-0.631-1.075-0.066-1.656,0.475-2.191c0.488-0.482,1.084-1.255,1.625-1.882   c0.543-0.628,0.723-1.075,1.082-1.793c0.363-0.717,0.182-1.344-0.09-1.883c-0.27-0.537-2.438-5.825-3.34-7.977   c-0.902-2.15-1.803-1.792-2.436-1.792c-0.631,0-1.354-0.09-2.076-0.09c-0.722,0-1.896,0.269-2.889,1.344   c-0.992,1.076-3.789,3.676-3.789,8.963c0,5.288,3.879,10.397,4.422,11.113c0.541,0.716,7.559,11.52,18.297,16.06   c10.738,4.541,10.738,3.031,12.671,2.852c1.932-0.182,6.41-2.599,7.312-5.107C68.397,55.981,68.397,54.386,68.129,53.938z"/>
+            </svg>
+            </svg>
+            <span>Chat with us</span>
+        </button>
+    </div>
+
+    <div class="chat-window" id="chat-window">
+        <div class="chat-header">
+            <img src="https://ui-avatars.com/api/?name=Aifuturix+Innovlabz&background=075E54&color=fff&size=128" alt="Company Logo" class="header-logo">
+            <div class="header-info">
+                <h3>Aifuturix Innovlabz</h3>
+                <p>online</p>
+            </div>
+            <button class="close-btn" id="close-chat-button">&times;</button>
+        </div>
+        
+        <div class="chat-body">
+            <div class="message received">
+                <div class="message-bubble">
+                    Hi, How can I help you?
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-footer">
+            <div id="initial-footer">
+                <button class="start-chat-btn" id="start-chat-btn">Start chat</button>
+            </div>
+            <div id="chat-input-area">
+                <button class="input-icon" id="attachment-btn">
+                    <svg viewBox="0 0 24 24"><path d="M16.5 6v11.5c0 2.21-1.79 4-4 4s-4-1.79-4-4V5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5v10.5c0 .55-.45 1-1 1s-1-.45-1-1V6H10v9.5c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5V5c0-2.21-1.79-4-4-4S7 2.79 7 5v12.5c0 3.04 2.46 5.5 5.5 5.5s5.5-2.46 5.5-5.5V6h-1.5z"></path></svg>
+                </button>
+                <input type="text" id="message-input" placeholder="Type a message...">
+                <button class="input-icon" id="send-btn">
+                    <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <input type="file" id="file-upload" style="display: none;">
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>

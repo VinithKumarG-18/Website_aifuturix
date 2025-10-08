@@ -1,0 +1,640 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Logo and Navigation Container */
+.logo-nav-container {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 2;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.nav-link:hover {
+    background-color: #3b068a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link.active {
+    background-color: #3b068a;
+}
+
+/* Top Section - Fixed Background */
+.top-section {
+    position: relative;
+    background: url("/static/top.jpg") no-repeat center center/cover;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 极px;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    z-index: 2;
+    max-width: 60%;
+}
+
+.nav-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    line-height: 1.2;
+    text-shadow: 2px 2px 6极 rgba(0, 0, 0, 0.8);
+}
+
+.nav-text .bold {
+    font-weight: 800;
+}
+
+.building-image {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    height: 250px;
+    background: url("/static/top.jpg") no-repeat center center/cover;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Contact Section - Full Height Background */
+.contact-section {
+    background: url("/static/bottom.jpg") no-repeat center center/cover;
+    background-size: cover;
+    padding: 100px 50px;
+    text-align: left;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.contact-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.company-name {
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.contact极etails {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.locations {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 2;
+    text-shadow: 1px 1px 4px rgba(0, 极, 0, 0.7);
+}
+
+.tagline {
+    margin-top: 25px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* WhatsApp Chatbot Styles - UPDATED TO MATCH YOUR CODE */
+.fab-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.fab {
+    background: #25d366;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.fab:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.fab-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.chat-window {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    display: none;
+    flex-direction: column;
+    z-index: 1001;
+    overflow: hidden;
+}
+
+.chat-window.show {
+    display: flex;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.chat-header {
+    background: #25d366;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.header-info h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.header-info p {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.close-btn {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.chat-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: url("/static/wtbg.png") no-repeat center center/cover;
+}
+
+.message {
+    margin-bottom: 15px;
+}
+
+.message.received {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.message.sent {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.message-bubble {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    word-wrap: break-word;
+}
+
+.message.received .message-bubble {
+    background: white;
+    color: #333;
+    border-bottom-left-radius: 5px;
+}
+
+.message.sent .message-bubble {
+    background: #25d366;
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+.chat-footer {
+    padding: 15px;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+}
+
+.start-chat-btn {
+    width: 100%;
+    background: #25d366;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 极.3s;
+}
+
+.start-chat-btn:hover {
+    background: #1ea952;
+}
+
+#chat-input-area {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    background: #f5f5f5;
+    padding: 8px;
+    border-radius: 25px;
+}
+
+#chat-input-area.show {
+    display: flex;
+}
+
+#message-input {
+    flex: 1;
+    border: none;
+    background: none;
+    outline: none;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.input-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.input-icon:hover {
+    background: #e0e0e0;
+}
+
+.input-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: #666;
+    transition: fill 0.3s;
+}
+
+.input-icon:hover svg {
+    fill: #25d366;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 1440px) {
+    .nav-text {
+        font-size: 3.5rem;
+    }
+    
+    .contact-section h2 {
+        font-size: 3.2rem;
+        margin-bottom: 30px;
+    }
+    
+    .company-name {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .contact-details {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+    
+    .locations {
+        font-size: 1.5rem;
+        margin-top: 25px;
+    }
+    
+    .tagline {
+        font-size: 1.8rem;
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+    .nav-text {
+        font-size: 3rem;
+    }
+    
+    .contact-section h2 {
+        font-size: 2.8rem;
+        margin-bottom: 25px;
+    }
+    
+    .company-name {
+        font-size: 1.8rem;
+        margin-bottom: 18px;
+    }
+    
+    .contact-details {
+        font-size: 1.4rem;
+        margin-bottom: 22px;
+    }
+    
+    .locations {
+        font-size: 1.3rem;
+        margin-top: 20px;
+    }
+    
+    .tagline {
+        font-size: 1.6rem;
+        margin-top: 18px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .logo-nav-container {
+        padding: 0 20px;
+    }
+    
+    .nav-menu {
+        gap: 15px;
+    }
+    
+    .nav-link {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    .top-section {
+        padding: 15px;
+    }
+    
+    .nav-text {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content {
+        left: 30px;
+        max-width: 70%;
+    }
+    
+    .building-image {
+        width: 350px;
+        height: 220px;
+        right: -30px;
+    }
+    
+    .contact-section {
+        padding: 80px 30px;
+    }
+    
+    .contact-section h2 {
+        font-size: 2.4rem;
+        margin-bottom: 20px;
+    }
+    
+    .company-name {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .contact-details {
+        font-size: 1.2rem;
+        margin-bottom: 18px;
+    }
+    
+    .locations {
+        font-size: 1.1rem;
+        margin-top: 18px;
+    }
+    
+    .tagline {
+        font-size: 1.3rem;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-nav-container {
+        padding: 0 15px;
+        top: 15px;
+    }
+    
+    .nav-menu {
+        gap: 10px;
+    }
+    
+    .nav-link {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .top-section {
+        padding: 10px;
+    }
+    
+    .hero-content {
+        left: 20px;
+        max-width: 80%;
+        top: 55%;
+    }
+    
+    .nav-text {
+        font-size: 2rem;
+    }
+    
+    .building-image {
+        display: none;
+    }
+    
+    .contact-section {
+        padding: 70px 20px;
+    }
+    
+    .contact-section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .company-name {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+    
+    .contact-details {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+    
+    .locations {
+        font-size: 1rem;
+        margin-top: 15px;
+    }
+    
+    .tagline {
+        font-size: 1.2rem;
+        margin-top: 12px;
+    }
+    
+    .chat-window {
+        width: 90vw;
+        right: 5vw;
+        height: 60vh;
+        bottom: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-nav-container {
+        padding: 0 10px;
+        top: 10px;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .nav-menu {
+        gap: 8px;
+    }
+    
+    .nav-link {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+    
+    .top-section {
+        padding: 5px;
+    }
+    
+    .hero-content {
+        left: 15px;
+        max-width: 90%;
+        top: 50%;
+    }
+    
+    .nav-text {
+        font-size: 1.6rem;
+    }
+    
+    .contact-section {
+        padding: 60px 15px;
+    }
+    
+    .contact-section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+    
+    .company-name {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    .contact-details {
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+    }
+    
+    .locations {
+        font-size: 0.9rem;
+        margin-top: 12px;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+}
