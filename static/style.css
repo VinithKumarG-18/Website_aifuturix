@@ -507,20 +507,14 @@ body {
     }
 }
 
-/* Add these media query updates to your existing CSS */
-
 @media (max-width: 768px) {
     .logo-nav-container {
         padding: 0 15px;
         top: 15px;
-        flex-direction: row; /* Changed from column */
-        justify-content: space-between; /* Keep logo left, nav right */
-        align-items: center;
     }
     
     .nav-menu {
         gap: 10px;
-        margin-left: auto; /* Push to right */
     }
     
     .nav-link {
@@ -575,17 +569,11 @@ body {
         margin-top: 12px;
     }
     
-    /* Chatbot positioning for tablet/mobile */
     .chat-window {
-        width: 320px; /* More compact */
-        right: 10px; /* Closer to right edge */
-        height: 450px; /* Slightly reduced height */
+        width: 90vw;
+        right: 5vw;
+        height: 60vh;
         bottom: 80px;
-    }
-    
-    .fab-container {
-        bottom: 15px;
-        right: 10px;
     }
 }
 
@@ -593,19 +581,13 @@ body {
     .logo-nav-container {
         padding: 0 10px;
         top: 10px;
-        flex-direction: row; /* Changed from column */
-        justify-content: space-between;
-        align-items: center;
-        gap: 0; /* Remove gap */
-    }
-    
-    .logo img {
-        height: 45px; /* Slightly smaller logo for mobile */
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
     }
     
     .nav-menu {
         gap: 8px;
-        margin-left: auto;
     }
     
     .nav-link {
@@ -654,44 +636,5 @@ body {
     .tagline {
         font-size: 1rem;
         margin-top: 10px;
-    }
-    
-    /* Compact chatbot for small mobile */
-    .chat-window {
-        width: 280px; /* Very compact */
-        right: 10px; /* Bottom right corner */
-        height: 400px; /* Reduced height */
-        bottom: 75px;
-    }
-    
-    .fab-container {
-        bottom: 15px;
-        right: 10px;
-    }
-    
-    .fab {
-        padding: 12px 20px; /* Slightly smaller FAB */
-    }
-    
-    .fab span {
-        font-size: 14px;
-    }
-}
-
-/* Extra small devices */
-@media (max-width: 380px) {
-    .chat-window {
-        width: 260px; /* Even more compact */
-        right: 10px;
-        height: 380px;
-        bottom: 70px;
-    }
-    
-    .fab {
-        padding: 10px 18px;
-    }
-    
-    .fab span {
-        font-size: 13px;
     }
 }
